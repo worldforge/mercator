@@ -17,12 +17,17 @@ echo autoheader...
 autoheader
 
 echo libtoolize...
+LIBTOOLIZE=libtoolize
 (libtoolize --version) < /dev/null > /dev/null 2>&1 || {
     echo libtoolize not found
-    exit 1
+    (glibtoolize --version) < /dev/null > /dev/null 2>&1 || {
+      echo glibtoolize not found
+      exit 1
+	}
+	LIBTOOLIZE=glibtoolize
 }
 
-libtoolize --automake --force --copy
+$LIBTOOLIZE --automake --force --copy
 
 echo automake...
 (automake --version) < /dev/null > /dev/null 2>&1 || {
