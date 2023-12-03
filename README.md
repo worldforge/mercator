@@ -1,3 +1,7 @@
+# DEPRECATED
+
+This code has been moved to [the Worldforge repository](https://github.com/worldforge/worldforge). 
+
 Mercator: a procedural terrain library
 ======================================
 
